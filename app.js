@@ -1,3 +1,6 @@
+// assignment1 Song Malisa Se, 301233051, 05/10/2022
+
+
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
@@ -5,10 +8,6 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
 let indexRouter = require('./routes/index');
-let aboutRouter = require('./routes/about');
-let projectsRouter = require('./routes/projects');
-let servicesRouter = require('./routes/services');
-let contactRouter = require('./routes/contact');
 let usersRouter = require('./routes/users');
 
 let app = express();
@@ -25,10 +24,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
 app.use('/', indexRouter);
-app.use('/about', aboutRouter);
-app.use('/about', servicesRouter);
-//app.use('/about', projectsRouter);
-app.use('/about', contactRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
